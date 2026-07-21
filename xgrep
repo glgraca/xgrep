@@ -2,36 +2,39 @@
 use strict;
 use warnings;
 
+my ($regex, $output, $filename)=@ARGV;
+
 sub quote {
   qq{"@_"};
 }
 
-my ($regex, $output, $filename)=@ARGV;
+sub parse {
+  my $fh=shift;
+  my $regex=shift;
+  my $output=shift;
 
-if(!defined $regex) {
-  print "Usage: xgrep regex [output] [filename]\n";
-  exit(0);
-}
-
-if(!defined $filename) {
-  $filename=$output;
-  undef($output);
-}
-
-my $fh;
-if(-e $filename) {
-  open($fh, '<', $filename);
-} else {
-  $fh=*STDIN;
-}
-
-while(<$fh>) {
-  if($_=~$regex) {
-    if(defined $output) {
-      print eval(quote($output));
-    } else {
-      print;
+  while(<$fh>) {
+    if($_=~$regex) {
+      if(defined $output) {
+        print eval(quote($output));
+      } else {
+        print;
+      }
     }
   }
 }
-close($fh);
+
+my $fh;
+if(-p STDIN) {
+  $fh=*STDIN;
+  parse($fh, $regex, $output);
+} else {
+  undef($output) if -e $output;
+  for $filename (@ARGV[1..$#ARGV]) {
+    if(-e $filename) {
+      open($fh, '<', $filename);
+      parse($fh, $regex, $output);
+      close($fh);
+    }
+  }
+}
