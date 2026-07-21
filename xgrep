@@ -25,10 +25,12 @@ if(-e $filename) {
 }
 
 while(<$fh>) {
-  if(defined $output) {
-    print eval(quote($output)) if $_=~$regex;
-  } else {
-    print;
+  if($_=~$regex) {
+    if(defined $output) {
+      print eval(quote($output));
+    } else {
+      print;
+    }
   }
 }
 close($fh);
