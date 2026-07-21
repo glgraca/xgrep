@@ -7,7 +7,7 @@ In order to have the flexibility that Perl offers but at the same time keeping t
 It takes 3 arguments, only the first one if obligatory.
 
 ```sh
-$xgrep 'sequence=(\d+)' '$1' log.txt
+$xgrep 'sequence=(\d+)' '$1\n' log.txt
 20
 30
 40
@@ -23,3 +23,5 @@ sequence=40
 ```
 
 If there are two arguments it checks if the second argument is a file and, if it doesn't exist, the script simply reads from STDIN.
+
+If you specify output, you have to include a newline if you want one. Otherwise, it you print out each line just as grep does.
