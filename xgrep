@@ -1,0 +1,34 @@
+#!/bin/perl
+use strict;
+use warnings;
+
+sub quote {
+  qq{"@_"};
+}
+
+my ($regex, $output, $filename)=@ARGV;
+
+if(!defined $regex) {
+  print "Usage: xgrep regex [output] [filename]\n";
+  exit(0);
+}
+
+if(!defined $filename) {
+  $filename=$output;
+}
+
+my $fh;
+if(-e $filename) {
+  open($fh, '<', $filename);
+} else {
+  $fh=*STDIN;
+}
+
+while(<$fh>) {
+  if(defined $output) {
+    print eval(quote($output)) if $_=~$regex;
+  } else {
+    print;
+  }
+}
+close($fh);
