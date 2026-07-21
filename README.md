@@ -13,7 +13,7 @@ $xgrep 'sequence=(\d+)' '$1' log.txt
 40
 
 $cat log.txt | xgrep 'sequence=(\d+)' '$1,'
-20,30,40
+20,30,40,
 
 $cat log.txt | xgrep 'sequence=(\d+)' 
 sequence=20
