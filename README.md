@@ -20,6 +20,13 @@ sequence=20
 sequence=30
 sequence=40
 
+$gunzip -c data.log.gz | xgrep 'id=(\d+)' '$1,'
+150647,160346,150648,160347,160348,150649,
+
+$xgrep 'enabled=(\w+)' '$filename: $1\n' *.ini
+abc.ini: true
+xyz.ini: false
+
 ```
 
 If there are two arguments it checks if the second argument is a file and, if it doesn't exist, the script simply reads from STDIN.
