@@ -15,6 +15,7 @@ if(!defined $regex) {
 
 if(!defined $filename) {
   $filename=$output;
+  undef($output);
 }
 
 my $fh;
