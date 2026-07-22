@@ -33,6 +33,10 @@ $xgrep 'enabled=(\w+)' '$filename: $1\n' *.ini
 abc.ini: true
 xyz.ini: false
 
+$xgrep 'weight=(\d+) items=(\d+)' '@{[$1*$2]}' data.txt
+34
+110
+
 ```
 
 If there are two arguments it checks if the second argument is a file and if the file doesn't exist the script simply reads from STDIN.
