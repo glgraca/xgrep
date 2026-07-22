@@ -4,7 +4,7 @@ This is a very simple solution to a problem that had been bothering me for a lon
 
 In order to have the flexibility that Perl offers but at the same time keep the command line simple, I wrote this little script.
 
-It takes 3 arguments; only the first one is obligatory.
+It takes 3 arguments; only the first one is mandatory.
 
 ```sh
 $xgrep 'sequence=(\d+)' '$1\n' log.txt
