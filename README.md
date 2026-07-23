@@ -8,6 +8,9 @@ In order to have the flexibility that Perl offers but at the same time keep the 
 It takes 3 arguments; only the first one is mandatory.
 
 ```sh
+$xgrep
+Usage: xgrep regex [output] [filename]
+
 $xgrep 'sequence=(\d+)' '$1\n' log.txt
 20
 30
