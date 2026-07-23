@@ -56,4 +56,4 @@ You can use any Perl expression as output; these are the variables you will most
 | :----- | :----- |
 | $1, $2, etc. | Regexp groupings |
 | $filename | The current filename |
-| $lineno | The current line number on the current file |
+| $lineno | The current line number in the current file |
