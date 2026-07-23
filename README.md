@@ -57,3 +57,4 @@ You can use any Perl expression as output; these are the variables you will most
 | $1, $2, etc. | Regexp groupings |
 | $filename | The current filename |
 | $lineno | The current line number in the current file |
+| $_ | The whole line that was matched (includes the trailing newline) |
