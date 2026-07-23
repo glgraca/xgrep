@@ -38,7 +38,7 @@ $xgrep 'weight=(\d+) items=(\d+)' '@{[$1*$2]}' data.txt
 34
 110
 
-$ xgrep while '$filename($lineno): $_' xgrep
+$xgrep while '$filename($lineno): $_' xgrep
 xgrep(22):   while(<$fh>) {
 
 ```
@@ -47,7 +47,7 @@ If there are two arguments it checks if the second argument is a file and if the
 
 If you specify output you have to include a newline if you want one. Otherwise, it will print out each line just as grep does.
 
-You can use any Perl expression as output; these are the variables you will most likely use:
+You can use any Perl expression as output; these are the variables you will most likely need:
 
 | Variable | Meaning |
 | :----- | :----- |
