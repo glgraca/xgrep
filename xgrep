@@ -17,8 +17,10 @@ sub parse {
   my $fh=shift;
   my $regex=shift;
   my $output=shift;
+  my $lineno=0;
 
   while(<$fh>) {
+    $lineno++;
     if($_=~$regex) {
       if(defined $output) {
         print eval(quote($output));
