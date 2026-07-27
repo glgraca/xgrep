@@ -5,7 +5,7 @@ use warnings;
 my ($regex, $output, $filename)=@ARGV;
 
 if(!defined $regex) {
-  print "Usage: xgrep regex [output] [filename]\n";
+  print "Usage: grepp regex [output] [filename]\n";
   exit(0);
 }
 
