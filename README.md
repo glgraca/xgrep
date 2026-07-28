@@ -1,5 +1,5 @@
 
-# grepp (grep and print)
+# grepp (grep++)
 
 This is a very simple solution to a problem that had been bothering me for a long time. I wanted grep to allow to me to print more complex output using capturing groups.
 
